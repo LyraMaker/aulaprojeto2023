@@ -4,6 +4,6 @@ require "Conta.php";
 
 $novaConta = new Conta("0001","Andreson",0.0);
 
-$novaConta->definirNumero("oioi");
+echo $novaConta->sacar(-1000);
 
 var_dump($novaConta);
