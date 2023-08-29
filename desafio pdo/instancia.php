@@ -2,28 +2,14 @@
 
 require "conexao.php";
 require "Autor.php";
+require "RepositorioAutor.php";
 
-$tabela = "CREATE TABLE IF NOT EXISTS AUTOR(
-    codigo TEXT,
-    nomeautor TEXT,
-    endautor TEXT,
-    telautor TEXT,
-    email TEXT,
-    primary key (codigo))";
+//$autor = new Autor("002","Dora Raposo","Rua XYZ","(21) 9090-9090","email@email.com");
 
-$banco->query($tabela);
+$repAutor = new RepositorioAutor();
 
-$autor = new Autor("001","Andrew Pascoal","Rua XYZ","(21) 9090-9090","email@email.com");
+//$repAutor->cadastrar($banco,$autor);
 
-$sqlInsert = "INSERT INTO AUTOR(codigo,nomeautor,endautor,telautor,email) VALUES (:c,:n,:e,:t,:em)";
+$valores = $repAutor->exibirTudo($banco);
 
-$insert = $banco->prepare($sqlInsert);
-
-$codigo = $autor->exibirCodigo();
-$nome = $autor->exibirNomeAutor();
-$endereco = $autor->exibirEndAutor();
-$tel = $autor->exibirTelAutor();
-$email = $autor->exibirEmail();
-
-$insert->bindParam(":c",$codigo); $insert->bindParam(":n",$nome); $insert->bindParam(":e",$endereco);
-$insert->bindParam(":t",$tel); $insert->bindParam(":em",$email); 
+echo $valores[1]['nomeautor'];

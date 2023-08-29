@@ -8,3 +8,13 @@ try{ //Tentar executar o comando dentro bloco
     echo "Deu erro na conexão! ";
     echo $e->getMessage();
 }
+
+$tabela = "CREATE TABLE IF NOT EXISTS AUTOR(
+    codigo TEXT,
+    nomeautor TEXT,
+    endautor TEXT,
+    telautor TEXT,
+    email TEXT,
+    primary key (codigo))";
+
+$banco->query($tabela);
