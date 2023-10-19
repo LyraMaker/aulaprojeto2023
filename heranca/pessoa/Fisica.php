@@ -1,6 +1,6 @@
 <?php
 
-class Fisica extends Pessoa{
+class Fisica extends Pessoa{ //O extends vai permitir acessar os atributos e métodos da classe referenciada,por exemplo, Pessoa, no nosso caso Pessoa.
     public string $cpf;
     public function __construct(string $id, string $nome, string $endereco,string $cpf){
         parent::__construct($id,$nome,$endereco);
