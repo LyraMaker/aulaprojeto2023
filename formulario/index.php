@@ -42,6 +42,7 @@
         </div>
 
         <button type="submit" class="button is-primary">Cadastrar</button>
+        <a class="button is-warning" href="listar.php">Listar dados</a>
     </form>
 </body>
 

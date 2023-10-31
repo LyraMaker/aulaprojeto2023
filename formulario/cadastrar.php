@@ -1,4 +1,5 @@
 <?php
+require "./php/Conectar.php";
 require "./php/Autor.php";
 require "./php/RepositorioAutor.php";
 
@@ -10,4 +11,7 @@ $email = $_POST['txtEmail'];
 
 $novoAutor = new Autor($codigo,$nome,$endereco,$telefone,$email);
 
-var_dump($novoAutor);
+(new RepositorioAutor())->cadastrar($banco,$novoAutor);
+
+header('Location: /'); // Redireciona para a página principal depois que cadastra
+
